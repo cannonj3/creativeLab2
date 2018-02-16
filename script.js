@@ -1,71 +1,124 @@
 $(document).ready(function() {
-    console.log("hello class");
 
-    $("#weatherSubmit").click(function(e) {
+    var first_id;
+
+    $("#foodSubmit").click(function(e) {
+
+      e.preventDefault();
+      var value = $("#foodInput").val();
+      console.log(value);
+      var result = "";
+
+      var myurl= "https://trackapi.nutritionix.com/v2/search/instant?query=" + value;
+      var itemId = "";
+      $.ajax({
+      	url : myurl,
+        headers: {
+          "x-app-id" : "fcd17848",
+          "x-app-key" : "2891c57fdc5bc418390fb132fa44d625",
+          "x-remote-user-id" : "0"
+        },
+      	dataType : "json",
+      	success : function(json) {
+            itemId = json.branded[0].nix_item_id;
+      	    console.log(json);
+              result += "<p>" + json.branded[0].brand_name_item_name + "</p>"
+            $("#foodResults").html(result);
+
+            var secondurl = "https://trackapi.nutritionix.com/v2/search/item?nix_item_id=" + itemId;
+            $.ajax({
+              url : secondurl,
+              headers: {
+                "x-app-id" : "fcd17848",
+                "x-app-key" : "2891c57fdc5bc418390fb132fa44d625"
+              },
+              dataType : "json",
+              success : function(json) {
+                  console.log(json);
+                  //result +=
+                  //for(var i=0; i < json.)
+              }
+
+            });
+        }
+      });
+
+
+    });
+
+  /*$("#expand0").click(function(a) {
+
+    a.preventDefault();
+    console.log("im in");
+    var result = "";
+
+    itemId = first_id;
+    var secondurl = "https://trackapi.nutritionix.com/v2/search/item?nix_item_id=" + itemId;
+    $.ajax({
+      url : secondurl,
+      headers: {
+        "x-app-id" : "fcd17848",
+        "x-app-key" : "2891c57fdc5bc418390fb132fa44d625"
+      },
+      dataType : "json",
+      success : function(json) {
+          console.log(json);
+          //result +=
+          //for(var i=0; i < json.)
+      }
+
+    });
+
+
+  });
+
+
+    /*$("#exerciseSubmit").click(function(e) {
 
     e.preventDefault();
-    var value = $("#weatherInput").val();
+    var value = $("#exerciseInput").val();
     console.log(value);
 
-    var myurl= "https://trackapi.nutritionix.com/v2/search/instant?query=" + value;
+    var myurl= "https://trackapi.nutritionix.com/v2/natural/exercise";
     $.ajax({
+      type: 'post',
     	url : myurl,
       headers: {
         "x-app-id" : "fcd17848",
         "x-app-key" : "2891c57fdc5bc418390fb132fa44d625",
-        "x-remote-user-id" : "0"
+        "x-remote-user-id" : "0",
+        "Content-Type" : "application/json"
+      },
+      data: value,
+      /*body: {
+
       },
     	dataType : "json",
     	success : function(json) {
     	    console.log(json);
 
+
 	    //json=json;
-	   /* var result = "";
-	    result += "<h2>Weather in " + json.name + "</h2>";
-	    for(var i=0; i < json.weather.length; i++){
-		result += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
-	    }
-	    result += "<h2>" + json.main.temp + "&deg;F <i id='humidity'>(" + json.main.humidity + "% humidity)</i></h2><h3>High: " + json.main.temp_max + "&deg;F, Low: " + json.main.temp_min + "&deg;F</h3>";
-	    result += "<p>";
-	    for(var i=0; i < json.weather.length; i++){
-
-		result += json.weather[i].description;
-		if(i!==json.weather.length-1){
-
-		    result += ", ";
-		}
-	    }
-	    result += "</p>";
-	    $("#weatherResults").html(result);*/
-	}
-    });
-
-    });
-
-$("#stackSubmit").click(function(e) {
-
-    e.preventDefault();
-    var value = $("#stackInput").val();
-    console.log(value);
-
-    var myurl= "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle=" + value;
-     $.ajax({
-	url : myurl,
-	dataType : "json",
-	success : function(json) {
-	    console.log(json);
-
 	    var result = "";
-	    result += "<h2>Results</h2>";
-	    result += "<ul>"
-	    for(var i=0; i < json.items.length; i++){
+	    result += "<p>Calories: " + json.branded[0].nf_calories + "</p>";
+      itemId = json.branded[0].nix_item_id;
 
-		result += "<li><a href='" + json.items[i].link + "'>" + json.items[i].title + "</a></li><br>";
-	    }
-	    result += "</ul>";
+      var secondurl = "https://trackapi.nutritionix.com/v2/search/item?nix_item_id=" + itemId;
+      $.ajax({
+      	url : secondurl,
+        headers: {
+          "x-app-id" : "fcd17848",
+          "x-app-key" : "2891c57fdc5bc418390fb132fa44d625"
+        },
+      	dataType : "json",
+      	success : function(json) {
+      	    console.log(json);
+  	    }
+      });
 
-	    $("#stackResults").html(result);
+	    $("#foodResults").html(result);
 	}
-     });
-});
+    });
+
+  });*/
 });
