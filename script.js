@@ -4,18 +4,6 @@ $(document).ready(function() {
 
     $("#foodSubmit").click(function(e) {
 
-      var add = "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      add += "<p> Blah blah blah blah blah blah </p>";
-      $("#foodResults").html(add);
-
       e.preventDefault();
       var value = $("#foodInput").val();
       var result = "";
