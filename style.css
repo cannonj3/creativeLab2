@@ -1,0 +1,65 @@
+body {
+
+  margin-top: 5vw;
+  text-align: center;
+  background-color: #262626;
+}
+
+#box {
+
+  background-color: #1485CC;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding: 3vw;
+
+}
+
+#foodResults{
+
+  font-size: 1vw;
+}
+
+#whole{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.column {
+
+  display: grid;
+  grid-template-rows 1fr 1fr;
+}
+
+.photo img{
+
+  padding: 3vw;
+  width: 75%;
+
+}
+
+#right_photo img{
+
+  float: right;
+  padding: 3vw;
+  width: 75%;
+}
+footer a{
+
+  bottom: 5vw;
+  left: 10vw;
+  color: white;
+}
+
+footer #powered{
+  margin-top: 5vw;
+  background-color: white;
+}
+
+#Title{
+  text-align:left;
+  color:white;
+  font-size: 3vw;
+  font-family: 'Archivo Black', sans-serif;
+  margin-left: 3vw;
+}

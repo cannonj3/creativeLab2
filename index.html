@@ -2,31 +2,48 @@
 <html>
   <head>
     <title>Lab 2</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Archivo+Black|Cinzel" rel="stylesheet">
   </head>
   <body>
+    <h1 id="Title">Food Analyzer</h1>
+    <div id="whole">
+      <div id="column">
+        <div class="photo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg">
+        </div>
 
-    <h1><i>FoodWatchers</i></h1>
+        <div class="photo">
+          <img src="https://c1.staticflickr.com/3/2926/14716049305_62495b73a5_b.jpg">
+        </div>
+      </div>
 
-    <nav>
-      <ul class="menu">
-	<li><a class="active" href="index.html">Weather</a></li>
-	<li><a href="stack.html">StackOverflow</a></li>
-      </ul>
-    </nav>
+      <div id="box">
+        <h1><i>What's In It?</i></h1>
 
-    <h3>WeatherFinder</h3>
+        <h3>Search any brand food to find What's In It?</h3>
 
-    <form>
-      <label>Enter brand food item: </label>
-      <input id="foodInput" type="text"></input><br><br>
-      <input id="foodSubmit" type="submit" value="Submit"></input>
-    </form>
-    <br>
-    <div id="foodResults">
+        <form>
+          <label>Enter brand food item: </label>
+          <input id="foodInput" type="text"></input><br><br>
+          <input id="foodSubmit" type="submit" value="Submit"></input>
+        </form>
+        <br>
+        <div id="foodResults">
+
+      </div>
 
     </div>
 
+  <div class="column">
+    <div class="photo">
+      <img src="https://img.leafcdn.tv/640/clsd/getty/1b992d00dd5c479ea73c43eab699824a">
+    </div>
+
+    <div class="photo">
+      <img src="https://images.pexels.com/photos/209424/pexels-photo-209424.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb">
+    </div>
+  </div>
     <!--<form>
       <label>Enter excercise:</label>
       <input id="exerciseInput" type="text"></input><br><br>
@@ -41,9 +58,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script text="type/javascript" src="/script.js">
     </script>
-
   </body>
   <footer>
+    <div id="powered">
+      <p>Powered by:<p>
+      <img src="https://developer.nutritionix.com/assets/nutritionix_api.png">
+    </div>
     <a href="https://github.com/cannonj3/creativeLab2.git">GitHub repository</a>
   </footer>
 
