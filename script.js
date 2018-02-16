@@ -13,8 +13,8 @@ $(document).ready(function() {
       $.ajax({
       	url : myurl,
         headers: {
-          "x-app-id" : "8e3591dd",
-          "x-app-key" : "b4d66e404234e82577f8d318b9dd10fe",
+          "x-app-id" : "d5c29508",
+          "x-app-key" : "8b1622b3eaf45a8a90c91da716f1692a",
           "x-remote-user-id" : "0"
         },
       	dataType : "json",
@@ -27,8 +27,8 @@ $(document).ready(function() {
             $.ajax({
               url : secondurl,
               headers: {
-                "x-app-id" : "8e3591dd",
-                "x-app-key" : "b4d66e404234e82577f8d318b9dd10fe"
+                "x-app-id" : "d5c29508",
+                "x-app-key" : "8b1622b3eaf45a8a90c91da716f1692a"
               },
               dataType : "json",
               success : function(json) {
